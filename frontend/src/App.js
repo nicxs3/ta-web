@@ -57,8 +57,7 @@ function App() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('http://localhost:5000/api/assign-ta', {
-        professorName,
+      const response = await axios.post(`${process.env.REACT_APP_API_URL}/api/assign-ta`, {
         courses,
         taPreferences
       });
